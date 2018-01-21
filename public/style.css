@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600');
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body, input {
+   color: #5E5E5E;
+}
+
+body {
+   font-family: 'Open Sans', sans-serif;
+   font-weight: 300;
+   font-size: 18px;
+}
+
+h1 {
+   font-size: 40px;
+   font-weight: 300;
+}
+
+.btn {
+   border: 0px;
+   padding: 10px 20px;
+   font-size: 16px;
+   cursor: pointer;
+   text-decoration: none;
+   outline: none;
+}
+
+.bg {
+   position: fixed;
+   left: -5%; top: -5%;
+   width: 110%;
+   height: 110vh;
+   background-image: url(img/bg.png);
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+   filter: blur(7px);
+   z-index: -1;
+}
+
+.todo-app {
+   width: 375px;
+   margin: 0 auto;
+   margin-top: 150px;
+   background: #333;
+}
+
+.header {
+   position: relative;
+   width: 100%;
+   height: 227px;
+   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(img/bg.png);
+   background-repeat: no-repeat;
+   background-size: cover;
+   padding: 55px 23px;
+   color: #fff;
+   font-weight: 300;
+}
+
+.header__textbox, .header__progress {
+   display: inline-block;
+}
+
+.header__textbox__greetings {
+   line-height: 1.1;
+   padding-bottom: 10px;
+}
+
+.header__textbox__date {
+   font-size: 14px;
+}
+
+.header__progress {
+   position: relative;
+   float: right;
+   width: 56px;
+   height: 56px;
+   text-align: center;
+   border-radius: 50%;
+   border: 3px solid #636C82;
+}
+
+.header__progress__completed-text {
+   display: block;
+   margin-top: 50%;
+   transform: translateY(-50%);
+}
+
+.header__progress__completed-line {
+   position: absolute;
+   top: -6%;
+   left: -6%;
+   width: inherit;
+   height: inherit;
+   border-radius: 50%;
+   border: 3px solid #18E879;
+}
+
+.todos {
+   position: relative;
+   width: 100%;
+   height: 440px;
+   background: #FCFCFC;
+   padding: 23px;
+}
+
+.todos__head {
+   margin-bottom: 10px;
+}
+
+.todos__head__heading {
+   display: inline-block;
+   text-transform: uppercase;
+   font-weight: 400; 
+   font-size: 20px;
+   margin-right: 10px;
+}
+
+.todos__head__tasks {
+   font-size: 14px;
+}
+
+.todos__tasks__task {
+   display: flex;
+   align-items: center;
+   border-bottom: 1px solid #EFEFEF;
+   height: 62px;
+}
+
+.todos__tasks__circle {
+   margin-right: 10px;
+   width: 29px;
+   height: 29px;
+   border-radius: 50%;
+   border: 1px solid #5E5E5E;
+}
+
+.todos__tasks__text {
+   width: 200px;
+}
+
+.todos__tasks__settings {
+   opacity: 0;
+   display: flex;
+   width: 100px;
+   height: 100%;
+   align-content: space-around;
+   transition: 0.2s linear;
+}
+
+.todos__tasks__task:hover .todos__tasks__settings {
+   opacity: 1;
+}
+
+.todos__tasks__settings__icon {
+   display: flex;
+   width: 100%;
+   align-items: center;
+   justify-content: center;
+   color: #fff;
+   cursor: pointer;
+}
+
+.todos__tasks__settings__icon_blue {
+   background: rgb(11, 125, 231);
+}
+
+.todos__tasks__settings__icon_red {
+   background: #FF4848;
+}
+
+.todos__tasks__task-completed .todos__tasks__text {
+   color: #B4B4B4;
+   text-decoration: line-through;
+}
+
+.todos__tasks__task-completed .todos__tasks__circle {
+   border-color: #23D576;
+   text-align: center;
+}
+
+.todos__tasks__task-completed .todos__tasks__circle .svg__checkmark {
+   margin-top: 50%;
+   transform: translateY(-50%);
+}
+
+.todos__add {
+   position: absolute;
+   width: 100%;
+   bottom: 0;
+   left: 0;
+   text-align: center;
+   padding-bottom: 30px;
+}
+
+.todos__add__btn {
+   width: 55px;
+   height: 55px;
+   background: #23D576;
+   border-radius: 50%;
+   margin: 0 auto;
+   margin-top: 15px;
+   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+   cursor: pointer;
+}
+
+.todos__add__textbox__input {
+   background: #FCFCFC;
+   border: 0;
+   border-bottom: 1px solid #5E5E5E;
+   font-size: 18px;
+   outline: none;
+   margin-right: 10px;
+}
+
+.todos__add__textbox__btn {
+   border-radius: 5px;
+   background: #23D576;
+   color: #fff;
+}
+
+@media only screen and (max-width: 500px) {
+	.todo-app {
+		min-width: 375px;
+		width: 100%;
+		margin-top: 0;
+	}
+
+	.todos {
+		height: calc(100vh - 227px);
+  }
+}
